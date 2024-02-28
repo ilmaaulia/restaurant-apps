@@ -1,0 +1,400 @@
+$black: #06070e;
+$black-transparent: #00000080;
+$grey-transparent: #36363680;
+$white: #ededed;
+$green: #2d7330;
+$red: #ff6b6b;
+$yellow: #f2c94c;
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Raleway', sans-serif;
+	background-color: $black;
+	color: $white;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+button,
+a {
+	min-width: 44px;
+	min-height: 44px;
+}
+
+.skip-link {
+	position: absolute;
+	top: -100px;
+	left: 0;
+	background-color: $black;
+	color: $white;
+	padding: 10px 20px;
+	z-index: 100;
+}
+
+.skip-link:focus {
+	top: 0;
+}
+
+.appBar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+	height: 60px;
+}
+
+.brand {
+	font-size: 1.5rem;
+	font-weight: bold;
+	letter-spacing: 3px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.menu {
+	display: flex;
+	gap: 30px;
+}
+
+.menu li {
+	list-style-type: none;
+}
+
+.menu li a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.theme-toggle {
+	font-size: 1.5rem;
+	background-color: transparent;
+	border: none;
+	color: $yellow;
+}
+
+.hide {
+	display: none;
+}
+
+.light-mode {
+	color: $black;
+  background-color: $white;
+}
+
+.light-mode .heroSection{
+	color: $white;
+}
+
+.heroSection {
+	background-image: url('/src/public/images/hero-image.jpg');
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	max-width: calc(100% - 40px);
+	margin: 0 auto;
+	height: 75vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	border-radius: 10px;
+}
+
+.heroSection::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $black-transparent;
+	border-radius: 10px;
+	z-index: 1;
+}
+
+.heroSection h1 {
+	font-size: 4rem;
+	margin-bottom: 20px;
+}
+
+.heroSection p {
+	font-size: 2rem;
+	margin-bottom: 20px;
+}
+
+.heroSection h1,
+.heroSection p {
+	z-index: 2;
+}
+
+.testimonials {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	margin: 50px 0;
+	padding: 0 20px;
+}
+
+.testimonialItem {
+	max-width: 100%;
+	box-shadow: 0 0 10px $grey-transparent;
+	position: relative;
+}
+
+.testimonialItem img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 10px 10px 0 0;
+}
+
+.restaurantList {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	margin: 50px 0;
+	padding: 0 20px;
+}
+
+.restaurantItem {
+	max-width: 100%;
+	box-shadow: 0 0 10px $grey-transparent;
+	position: relative;
+}
+
+.restaurantItem img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 10px 10px 0 0;
+	filter: brightness(50%);
+}
+
+.city {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	background-color: $red;
+	padding: 5px 10px;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+.description {
+	height: 100px;
+	overflow: hidden;
+}
+
+.info {
+	padding: 20px;
+	line-height: 1.5;
+}
+
+.read-more {
+	background-color: $green;
+	color: $white;
+	font-family: 'Raleway', sans-serif;
+	padding: 10px 20px;
+	margin-top: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: .2s;
+}
+
+.read-more.active {
+	background-color: $black;
+	color: $green;
+	border: $green solid 2.5px;
+}
+
+.read-more::after {
+	content: 'Read More >>';
+}
+
+.read-more.active::after {
+	content: '<< Show Less';
+}
+
+.read-more:hover {
+	background-color: $green;
+}
+
+.read-more.active:hover {
+	background-color: $black;
+}
+
+.show-description {
+	height: auto;
+}
+
+.rating {
+	margin-bottom: 10px;
+}
+
+.rating i {
+	color: $yellow;
+}
+
+.city i,
+.rating i {
+	margin-right: 5px;
+}
+
+.contact {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	margin: 20px;
+}
+
+.contact h2 {
+	margin-bottom: 20px;
+}
+
+.contact p {
+	margin-bottom: 20px;
+}
+
+.contact a {
+	color: #ff6b6b;
+}
+
+.copyright {
+	text-align: center;
+	padding: 20px;
+	height: 100px;
+	line-height: 50px;
+}
+
+@media screen and (max-width: 912px) {
+	.restaurantList {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.heroSection h1 {
+		font-size: 3rem;
+	}
+
+	.heroSection p {
+		font-size: 1.5rem;
+	}
+
+	.restaurantList {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.menu {
+		display: none;
+	}
+
+	.menu-toggle {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+
+	.menu-toggle span {
+		display: block;
+		width: 30px;
+		height: 2px;
+		font-size: 1.5rem;
+		background-color: $white;
+		border-radius: 10px;
+		transition: .2s;
+	}
+
+	.light-mode .menu-toggle span {
+		background-color: $black;
+	}
+
+	.menu-toggle.active span:nth-child(1) {
+		transform: translateY(4px) rotate(45deg);
+	}
+
+	.menu-toggle.active span:nth-child(2) {
+		display: none;
+	}
+
+	.menu-toggle.active span:nth-child(3) {
+		transform: translateY(-4px) rotate(-45deg);
+	}
+
+	.brand {
+		order: 2;
+	}
+
+	#drawer {
+		order: 1;
+	}
+
+	theme-toggle {
+		order: 3;
+	}
+
+	.show-menu {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		position: absolute;
+		width: 100%;
+		top: 60px;
+		right: 0;
+		background-color: $black;
+		padding: 20px;
+		box-shadow: 1px 1px 10px $grey-transparent;
+		border-radius: 0 0 10px 10px;
+		opacity: .95;
+		z-index: 100;
+	}
+
+	.light-mode .show-menu {
+		background-color: $white;
+	}
+
+	.heroSection {
+		align-items: flex-start;
+		padding: 20px;
+		height: 50vh;
+	}
+
+	.heroSection h1 {
+		font-size: 2rem;
+	}
+
+	.heroSection p {
+		font-size: 1rem;
+	}
+
+	.restaurantList {
+		grid-template-columns: 1fr;
+	}
+
+	.restaurantList h2 {
+		font-size: 1.4rem;
+	}
+}
