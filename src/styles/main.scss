@@ -221,7 +221,7 @@ a {
 }
 
 .read-more.active {
-	background-color: $black;
+	background-color: transparent;
 	color: $green;
 	border: $green solid 2.5px;
 }
@@ -239,7 +239,7 @@ a {
 }
 
 .read-more.active:hover {
-	background-color: $black;
+	background-color: transparent;
 }
 
 .show-description {
