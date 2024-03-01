@@ -1,6 +1,6 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.scss';
-import './components/skip-link.js';	
+import './components/skip-link.js';
 import './components/app-bar.js';
 import './components/hero-section.js';
 import './components/restaurant-section.js';

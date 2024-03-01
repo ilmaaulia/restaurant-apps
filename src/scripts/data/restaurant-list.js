@@ -8,7 +8,9 @@ class RestaurantList {
       const response = await fetch('data/DATA.json');
       const { restaurants } = await response.json();
 
-      restaurants.forEach(({ name, description, city, rating, pictureId }) => {
+      restaurants.forEach(({
+        name, description, city, rating, pictureId,
+      }) => {
         const restaurantItem = document.createElement('section');
         restaurantItem.classList.add('restaurantItem');
         restaurantItem.innerHTML = `
@@ -20,7 +22,7 @@ class RestaurantList {
             <p class="description">${description}</p>
             <button class="read-more"></button>
           </div>
-        `
+        `;
         this.restaurantList.appendChild(restaurantItem);
       });
 

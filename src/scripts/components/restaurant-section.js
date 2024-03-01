@@ -1,11 +1,11 @@
 class RestaurantList extends HTMLElement {
-	constructor() {
-		super();
+  constructor() {
+    super();
 
-		this.innerHTML = `
-			<section id="restaurant-list" class="restaurantList"></section>
-		`;
-	}
+    this.innerHTML = `
+      <section id="restaurant-list" class="restaurantList"></section>
+    `;
+  }
 }
 
 customElements.define('restaurant-list', RestaurantList);
