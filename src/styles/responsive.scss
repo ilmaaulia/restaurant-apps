@@ -1,0 +1,131 @@
+@import 'variables.scss';
+
+@media screen and (max-width: 912px) {
+	.restaurantList {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.heroSection h1 {
+		font-size: 3rem;
+	}
+
+	.heroSection p {
+		font-size: 1.5rem;
+	}
+
+	.restaurantList {
+		grid-template-columns: 1fr;
+	}
+
+	.restaurantDetail {
+		grid-template-columns: 1fr;
+	}
+
+	.restaurant-detail__important {
+		font-size: .8rem;
+		width: 100%;
+	}
+
+	.review-card {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.menu {
+		display: none;
+	}
+
+	.menu-toggle {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+
+	.menu-toggle span {
+		display: block;
+		width: 30px;
+		height: 2px;
+		font-size: 1.5rem;
+		background-color: $white;
+		border-radius: 10px;
+		transition: .2s;
+	}
+
+	.light-mode .menu-toggle span {
+		background-color: $black;
+	}
+
+	.menu-toggle.active span:nth-child(1) {
+		transform: translateY(4px) rotate(45deg);
+	}
+
+	.menu-toggle.active span:nth-child(2) {
+		display: none;
+	}
+
+	.menu-toggle.active span:nth-child(3) {
+		transform: translateY(-4px) rotate(-45deg);
+	}
+
+	.brand {
+		order: 2;
+	}
+
+	#drawer {
+		order: 1;
+	}
+
+	theme-toggle {
+		order: 3;
+	}
+
+	.open {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		position: absolute;
+		width: 100%;
+		top: 60px;
+		right: 0;
+		background-color: $black;
+		padding: 20px;
+		box-shadow: 1px 1px 10px $grey-transparent;
+		border-radius: 0 0 10px 10px;
+		opacity: .95;
+		z-index: 100;
+	}
+
+	.light-mode .show-menu {
+		background-color: $white;
+	}
+
+	.heroSection {
+		align-items: flex-start;
+		padding: 20px;
+		height: 50vh;
+	}
+
+	.heroSection h1 {
+		font-size: 2rem;
+	}
+
+	.heroSection p {
+		font-size: 1rem;
+	}
+
+	.restaurantList {
+		grid-template-columns: 1fr;
+	}
+
+	.restaurant-detail__important {
+		font-size: .7rem;
+	}
+
+	.review-card {
+		flex-direction: column;
+	}
+}

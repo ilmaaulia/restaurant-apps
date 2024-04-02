@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const FaviconWebpackPlugin = require('favicons-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 
 module.exports = {
   entry: {
@@ -18,9 +18,9 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          "style-loader",
-          "css-loader",
-          "sass-loader",
+          'style-loader',
+          'css-loader',
+          'sass-loader',
         ],
       },
     ],
@@ -40,8 +40,23 @@ module.exports = {
         },
       ],
     }),
-    new FaviconWebpackPlugin({
-      logo: path.resolve(__dirname, 'src/public/favicon.ico')
+    new WebpackPwaManifest({
+      publicPath: './',
+      filename: 'app.webmanifest',
+      id: 'lupin-restaurant-apps',
+      start_url: './index.html',
+      name: 'Lupin Restaurant Apps',
+      short_name: 'Lupin',
+      display: 'standalone',
+      theme_color: '#ff6b6b',
+      background_color: '#06070e',
+      crossorigin: null,
+      icons: [
+        {
+          src: path.resolve('src/public/favicon.png'),
+          sizes: [96, 128, 192, 256, 384, 512],
+        },
+      ],
     }),
   ],
 };
