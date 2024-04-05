@@ -4,6 +4,7 @@ import '../styles/responsive.scss';
 import './components/components.js';
 import './utils/theme-mode.js';
 import App from './views/app.js';
+import swRegister from './utils/sw-register.js';
 
 const app = new App({
   button: document.querySelector('.menu-toggle'),
@@ -17,4 +18,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });
