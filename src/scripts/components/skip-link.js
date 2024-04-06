@@ -3,7 +3,7 @@ class SkipLink extends HTMLElement {
     super();
 
     this.innerHTML = `
-      <a id="skip-link" class="skip-link" href="#restaurant-list">Skip to content</a>
+      <a id="skip-link" class="skip-link" href="#mainContent">Skip to content</a>
     `;
   }
 }

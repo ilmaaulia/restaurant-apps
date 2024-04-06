@@ -1,25 +1,25 @@
 @import 'variables.scss';
 
 @media screen and (max-width: 912px) {
-	.restaurantList {
+	.restaurant-list {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
 @media screen and (max-width: 768px) {
-	.heroSection h1 {
+	.hero-section h1 {
 		font-size: 3rem;
 	}
 
-	.heroSection p {
+	.hero-section p {
 		font-size: 1.5rem;
 	}
 
-	.restaurantList {
+	.restaurant-list {
 		grid-template-columns: 1fr;
 	}
 
-	.restaurantDetail {
+	.restaurant-detail {
 		grid-template-columns: 1fr;
 	}
 
@@ -31,6 +31,10 @@
 	.review-card {
 		flex-direction: row;
 		flex-wrap: wrap;
+	}
+
+	.review-form button {
+		width: 150px;
 	}
 }
 
@@ -103,21 +107,21 @@
 		background-color: $white;
 	}
 
-	.heroSection {
+	.hero-section {
 		align-items: flex-start;
 		padding: 20px;
 		height: 50vh;
 	}
 
-	.heroSection h1 {
+	.hero-section h1 {
 		font-size: 2rem;
 	}
 
-	.heroSection p {
+	.hero-section p {
 		font-size: 1rem;
 	}
 
-	.restaurantList {
+	.restaurant-list {
 		grid-template-columns: 1fr;
 	}
 
@@ -127,5 +131,13 @@
 
 	.review-card {
 		flex-direction: column;
+	}
+
+	.review-form button {
+		width: 100%;
+	}
+
+	.favorite-heading {
+		font-size: 1.2rem;
 	}
 }

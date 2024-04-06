@@ -17,8 +17,6 @@ class App {
       drawer: this._drawer,
       content: this._content,
     });
-
-    // kita bisa menginisiasikan komponen lain bila ada
   }
 
   async renderPage() {
@@ -26,6 +24,12 @@ class App {
     const page = routes[url];
     this._content.innerHTML = await page.render();
     await page.afterRender();
+
+    const skipLinkElement = document.querySelector('.skip-link');
+    skipLinkElement.addEventListener('click', (event) => {
+      event.preventDefault();
+      document.querySelector('#mainContent').focus();
+    });
   }
 }
 
