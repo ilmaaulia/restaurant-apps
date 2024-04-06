@@ -1,4 +1,3 @@
-/* eslint-disable no-alert */
 import UrlParser from '../../routes/url-parser.js';
 import API_ENDPOINT from '../../globals/api-endpoint.js';
 import RestaurantsSource from '../../data/restaurants-source.js';
