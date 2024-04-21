@@ -1,2 +1,8 @@
-node_modules
+.idea
+.vscode
+.env
+.test.env
+
 dist
+node_modules
+package-lock.json

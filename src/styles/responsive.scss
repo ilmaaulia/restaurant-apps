@@ -110,7 +110,7 @@
 	.hero-section {
 		align-items: flex-start;
 		padding: 20px;
-		height: 50vh;
+		height: 45vh;
 	}
 
 	.hero-section h1 {
@@ -123,6 +123,10 @@
 
 	.restaurant-list {
 		grid-template-columns: 1fr;
+	}
+
+	.restaurant-item__image {
+		height: 150px;
 	}
 
 	.restaurant-detail__important {
