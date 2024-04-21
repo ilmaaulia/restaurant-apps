@@ -18,6 +18,10 @@ main, .appBar {
 	width: 100%;
 }
 
+main {
+	min-height: 100vh;
+}
+
 a {
 	text-decoration: none;
 	color: inherit;
@@ -138,7 +142,12 @@ ul li {
 */
 
 .hero-section {
-	background-image: url('/src/public/images/hero-image.jpg');
+	background-image:
+		image-set(
+			url('/src/public/images/hero/hero-image-small.jpg') 1x,
+			url('/src/public/images/hero/hero-image-large.jpg') 2x
+		)
+	;
 	background-size: cover;
 	background-position: center;
 	width: 100%;
@@ -190,6 +199,7 @@ ul li {
 	gap: 20px;
 	margin: 50px 0;
 	padding: 0 20px;
+	min-height: 100vh;
 }
 
 /*
@@ -342,6 +352,11 @@ table, td {
 /*
 	like button
 */
+
+#likeButtonContainer {
+	width: 100%;
+	height: 100%;
+}
 
 .like {
   width: 55px;
@@ -549,10 +564,10 @@ table, td {
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
-  animation: loadingAnimation 1.5s infinite ease-in-out;
+  animation: loadingAnimation 3s infinite ease-in-out;
 }
 
 .dot1,

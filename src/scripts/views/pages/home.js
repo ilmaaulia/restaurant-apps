@@ -26,35 +26,29 @@ const Home = {
     const restaurantsContainer = document.querySelector('#restaurants');
     const loadingElement = document.getElementById('loading');
 
-    loadingElement.style.display = 'flex';
+    try {
+      loadingElement.style.display = 'flex';
+      const restaurants = await RestaurantsSource.restaurantList();
+      restaurants.forEach((restaurant) => {
+        const restaurantItemElement = document.createElement('div');
+        restaurantItemElement.classList.add('restaurant-item');
+        restaurantItemElement.innerHTML = createRestaurantItemTemplate(restaurant);
+        restaurantsContainer.appendChild(restaurantItemElement);
 
-    setTimeout(async () => {
-      try {
-        const restaurants = await RestaurantsSource.restaurantList();
-        restaurants.forEach((restaurant) => {
-          const restaurantItemElement = document.createElement('div');
-          restaurantItemElement.classList.add('restaurant-item');
-          restaurantItemElement.innerHTML += createRestaurantItemTemplate(restaurant);
-          restaurantsContainer.appendChild(restaurantItemElement);
-
-          const readMoreButton = restaurantItemElement.querySelector('.read-more');
-          const description = restaurantItemElement.querySelector('.restaurant-item__description');
-          readMoreButton.addEventListener('click', () => {
-            description.classList.toggle('show-description');
-            if (description.classList.contains('show-description')) {
-              readMoreButton.classList.add('active');
-            } else {
-              readMoreButton.classList.remove('active');
-            }
-          });
+        const readMoreButton = restaurantItemElement.querySelector('.read-more');
+        const description = restaurantItemElement.querySelector('.restaurant-item__description');
+        readMoreButton.addEventListener('click', () => {
+          description.classList.toggle('show-description');
+          readMoreButton.classList.toggle('active');
         });
-      } catch (error) {
-        console.log('Error loading restaurants:', error);
-        restaurantsContainer.innerHTML = '<p>Error loading restaurants. Please try again later.</p>';
-      } finally {
-        loadingElement.style.display = 'none';
-      }
-    }, 2000);
+      });
+    } catch (error) {
+      console.log('Error loading restaurants:', error);
+      const errorMessage = '<p>Error loading restaurants. Please try again later.</p>';
+      restaurantsContainer.innerHTML = errorMessage;
+    } finally {
+      loadingElement.style.display = 'none';
+    }
   },
 };
 
