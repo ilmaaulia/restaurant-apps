@@ -6,6 +6,7 @@ const imageminMozjpeg = require('imagemin-mozjpeg');
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
@@ -24,7 +25,7 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader',
         ],
@@ -73,6 +74,7 @@ module.exports = {
         },
       ],
     }),
+    new MiniCssExtractPlugin(),
     new WebpackPwaManifest({
       publicPath: './',
       filename: 'app.webmanifest',
