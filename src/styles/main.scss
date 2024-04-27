@@ -34,7 +34,8 @@ a:hover {
 button,
 button::after,
 a,
-input {
+input,
+textarea {
 	min-width: 44px !important;
 	min-height: 44px !important;
 	display: inline-block;
@@ -142,12 +143,7 @@ ul li {
 */
 
 .hero-section {
-	background-image:
-		image-set(
-			url('/src/public/images/hero/hero-image-small.jpg') 1x,
-			url('/src/public/images/hero/hero-image-large.jpg') 2x
-		)
-	;
+	background-image: url('/src/public/images/hero/hero-image-large.jpg');	;
 	background-size: cover;
 	background-position: center;
 	width: 100%;
@@ -400,7 +396,8 @@ table, td {
   margin-bottom: 10px;
 }
 
-.restaurant-detail__reviews .review-item {
+.restaurant-detail__reviews .review-item,
+.restaurant-detail__reviews .review-item-new{
   background-color: $grey-transparent;
   padding: 15px;
   border-radius: 10px;
@@ -408,22 +405,26 @@ table, td {
 	gap: 20px;
 }
 
-.restaurant-detail__reviews .review-item p {
+.restaurant-detail__reviews .review-item p,
+.restaurant-detail__reviews .review-item-new p{
   font-size: 12px;
   margin: 5px 0;
 }
 
-.restaurant-detail__reviews .review-item .photo {
+.restaurant-detail__reviews .review-item .photo,
+.restaurant-detail__reviews .review-item-new .photo{
   width: 30px;
   height: 30px;
   border-radius: 50%;
 }
 
-.restaurant-detail__reviews .review-item .name {
+.restaurant-detail__reviews .review-item .name,
+.restaurant-detail__reviews .review-item-new .name{
   font-weight: bold;
 }
 
-.restaurant-detail__reviews .review-item p span {
+.restaurant-detail__reviews .review-item p span,
+.restaurant-detail__reviews .review-item-new p span{
   color: $white-transparent;
   font-size: .7rem;
 }
@@ -454,7 +455,6 @@ table, td {
 	background-color: $green;
 	color: $white;
 	font-family: 'Raleway', sans-serif;
-	padding: 10px 20px;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;

@@ -2,7 +2,8 @@ import UrlParser from '../../routes/url-parser.js';
 import API_ENDPOINT from '../../globals/api-endpoint.js';
 import RestaurantsSource from '../../data/restaurants-source.js';
 import { createRestaurantDetailTemplate } from '../templates/template-creator.js';
-import LikeButtonInitiator from '../../utils/like-button-initiator.js';
+import LikeButtonPresenter from '../../utils/like-button-presenter.js';
+import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb.js';
 
 const Detail = {
   async render() {
@@ -44,10 +45,10 @@ const Detail = {
         if (responseData.error === false) {
           const reviewCard = document.querySelector('.review-card');
           const newReviewItem = `
-            <div class="review-item">
+            <div class="review-item-new">
               <img src="./images/man.png" alt="${name}" class="photo">
               <div class="review-content">
-                <p class="name">${name} <span class="date"> · ${date}</span></p>
+                <p class="name-date"><span class="name">${name}</span><span class="date"> · ${date}</span></p>
                 <p class="review">${review}</p>
               </div>
             </div>
@@ -67,8 +68,9 @@ const Detail = {
       }
     });
 
-    LikeButtonInitiator.init({
+    LikeButtonPresenter.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      favoriteRestaurants: FavoriteRestaurantIdb,
       restaurant: {
         id: restaurant.restaurant.id,
         name: restaurant.restaurant.name,
