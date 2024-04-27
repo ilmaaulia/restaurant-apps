@@ -39,6 +39,10 @@
 }
 
 @media screen and (max-width: 576px) {
+	.hero-section {
+		background-image: url('/src/public/images/hero/hero-image-small.jpg');
+	}
+
 	.menu {
 		display: none;
 	}

@@ -58,7 +58,7 @@ const createRestaurantDetailTemplate = (restaurant) => {
       <form id="review-form" class="review-form">
         <input type="text" id="name" placeholder="Your Name" required>
         <textarea id="review" placeholder="Write your review here" required></textarea>
-        <button type="submit">Submit Review</button>
+        <button type="submit" id="submit-review">Submit Review</button>
       </form>
       <div class="review-card">
         ${restaurant.customerReviews ? restaurant.customerReviews.map(review => `

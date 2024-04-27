@@ -5,10 +5,12 @@
 
 /** @type {import('jest').Config} */
 const config = {
+  // The glob patterns Jest uses to detect test files
   testMatch: [
-    '**/tests/**/*.test.[jt]s?(x)',
+    '**/tests/**/*.test.[jt]s',
   ],
 
+  // eslint-disable-next-line max-len
   // The paths to modules that run some code to configure or set up the testing environment before each test
   setupFiles: ['fake-indexeddb/auto'],
 
