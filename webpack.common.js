@@ -92,7 +92,7 @@ module.exports = {
       ],
     }),
     new WorkboxWebpackPlugin.GenerateSW({
-      swDest: '/sw.bundle.js',
+      swDest: './sw.bundle.js',
       runtimeCaching: [
         {
           urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev/'),
