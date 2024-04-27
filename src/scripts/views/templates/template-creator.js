@@ -1,7 +1,7 @@
 import CONFIG from '../../globals/config.js';
 
 const createRestaurantItemTemplate = (restaurant) => `
-  <img class="restaurant-item__image lazyload" src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="${restaurant.name}">
+  <img class="restaurant-item__image lazyload" data-src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="${restaurant.name}">
   <div class="restaurant-item__content">
     <p class="restaurant-item__city"><i class="bi bi-geo-alt-fill"></i>${restaurant.city}</p>
     <p class="restaurant-item__rating"><i class="bi bi-star-fill"></i> ${restaurant.rating}</p>
