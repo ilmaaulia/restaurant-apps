@@ -419,14 +419,15 @@ table, td {
 }
 
 .restaurant-detail__reviews .review-item .name,
-.restaurant-detail__reviews .review-item-new .name{
+.restaurant-detail__reviews .review-item-new .name-date {
   font-weight: bold;
 }
 
-.restaurant-detail__reviews .review-item p span,
-.restaurant-detail__reviews .review-item-new p span{
+.restaurant-detail__reviews .review-item .date,
+.restaurant-detail__reviews .review-item-new .date {
   color: $white-transparent;
   font-size: .7rem;
+	font-weight: bold;
 }
 
 .review-form {
