@@ -54,6 +54,7 @@ module.exports = {
         },
       },
     },
+    minimizer: [new CssMinimizerPlugin()],
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -130,6 +131,5 @@ module.exports = {
       analyzerMode: 'static',
       openAnalyzer: false,
     }),
-    new CssMinimizerPlugin(),
   ],
 };
