@@ -74,7 +74,10 @@ module.exports = {
         },
       ],
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
     new WebpackPwaManifest({
       publicPath: './',
       filename: 'app.webmanifest',
